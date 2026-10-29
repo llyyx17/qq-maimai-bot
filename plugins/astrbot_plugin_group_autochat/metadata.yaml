@@ -1,0 +1,10 @@
+name: astrbot_plugin_group_autochat
+display_name: 群聊自主插话
+short_desc: 不用 @ 也能按关键词或概率在群里接话。
+desc: >-
+  让机器人在群里主动接话：命中关键词（有人叫它外号、聊到指定话题）或按概率随机冒泡，
+  不需要 @。随机冒泡有热度门槛（群里正热闹才插话）、冷却和每小时上限；
+  插话时会把最近的群聊内容注入提示词，让它知道现在在聊什么。
+version: 1.0.0
+author: operator
+astrbot_version: ">=4.16,<5"

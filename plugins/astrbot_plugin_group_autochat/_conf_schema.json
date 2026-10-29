@@ -1,0 +1,92 @@
+{
+  "enabled": {
+    "description": "启用自主插话",
+    "type": "bool",
+    "default": true,
+    "hint": "总开关。关掉后机器人只在被 @ 时回复。"
+  },
+  "groups": {
+    "description": "生效的群号",
+    "type": "list",
+    "default": [],
+    "hint": "留空 = AstrBot 白名单里的所有群都生效；填了就只在这些群里插话，一行一个群号。"
+  },
+  "keywords": {
+    "description": "触发关键词",
+    "type": "list",
+    "default": ["豪鱼", "小鲸鱼", "鲸鱼", "臭鱼", "鱼哥"],
+    "hint": "命中任意一个就进入「关键词插话」（不区分大小写）。只放「在叫它」的词；「舞萌」「查分」「段位」「机厅」这类日常话题词别放，否则等于每条都触发。"
+  },
+  "keyword_probability": {
+    "description": "命中关键词时的插话概率",
+    "type": "float",
+    "default": 0.9,
+    "hint": "1 = 每次命中都说，0.9 = 偶尔故意不接。"
+  },
+  "random_probability": {
+    "description": "随机冒泡概率",
+    "type": "float",
+    "default": 0.08,
+    "hint": "普通消息上按这个概率插话。还需要同时满足下面的「热度门槛」和冷却。"
+  },
+  "keyword_cooldown_seconds": {
+    "description": "关键词插话冷却（秒）",
+    "type": "int",
+    "default": 60,
+    "hint": "两次关键词插话之间的最小间隔。"
+  },
+  "random_cooldown_seconds": {
+    "description": "随机冒泡冷却（秒）",
+    "type": "int",
+    "default": 240,
+    "hint": "两次随机冒泡之间的最小间隔。"
+  },
+  "keyword_max_per_hour": {
+    "description": "关键词插话额度（次/小时）",
+    "type": "int",
+    "default": 20,
+    "hint": "关键词和随机冒泡是两份独立额度。关键词是「有人在叫它」，所以额度给得宽，真正起限制作用的是下面的冷却。"
+  },
+  "random_max_per_hour": {
+    "description": "随机冒泡额度（次/小时）",
+    "type": "int",
+    "default": 3,
+    "hint": "只约束随机冒泡，不会被关键词用掉。"
+  },
+  "activity_window_seconds": {
+    "description": "热度统计窗口（秒）",
+    "type": "int",
+    "default": 300,
+    "hint": "在这个时间窗口内统计群消息条数。"
+  },
+  "activity_min_messages": {
+    "description": "随机冒泡的最低热度",
+    "type": "int",
+    "default": 3,
+    "hint": "窗口内消息少于这个数就不随机冒泡——避免对着冷清的群自言自语。"
+  },
+  "quiet_hours": {
+    "description": "安静时段",
+    "type": "list",
+    "default": [],
+    "hint": "例如 [\"02:00-08:00\"]，支持跨零点。留空 = 全天都可能插话。"
+  },
+  "ignore_prefixes": {
+    "description": "忽略的消息前缀",
+    "type": "list",
+    "default": ["/", "#", "／", "!", "！"],
+    "hint": "以这些符号开头的消息不当成闲聊（多半是命令）。"
+  },
+  "context_messages": {
+    "description": "注入的群聊条数",
+    "type": "int",
+    "default": 10,
+    "hint": "自主插话时，把最近多少条群消息塞进提示词，让它知道现在在聊什么。"
+  },
+  "debug": {
+    "description": "调试日志",
+    "type": "bool",
+    "default": false,
+    "hint": "打开后每条群消息都会写一行「不插话（原因）」，方便调概率和关键词；平时建议关掉。"
+  }
+}

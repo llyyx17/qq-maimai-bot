@@ -1,0 +1,22 @@
+{
+  "_comment": "SnowLuma 的 OneBot 配置示例（把真实值替换后再用）。路径：<SnowLuma>/config/onebot_<机器人QQ>.json",
+  "http": {
+    "enable": true,
+    "host": "127.0.0.1",
+    "port": 3000,
+    "accessToken": "<可选：自定一个，非空时 AstrBot 侧也要填同一个>"
+  },
+  "ws": {
+    "enable": true,
+    "host": "127.0.0.1",
+    "port": 3001
+  },
+  "wsClients": [
+    {
+      "name": "astrbot",
+      "url": "ws://127.0.0.1:6199/ws",
+      "role": "Universal",
+      "reconnectInterval": 5000
+    }
+  ]
+}

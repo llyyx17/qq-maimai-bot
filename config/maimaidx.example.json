@@ -1,0 +1,18 @@
+{
+  "_comment": "查分插件的凭据示例（data/config/astrbot_plugin_maimaidx_config.json 的节选）。凭据不要提交到仓库。",
+  "divingfish": {
+    "maimaidxtoken": "",
+    "df_client_id": "",
+    "df_client_secret": ""
+  },
+  "lxns": {
+    "lxns_dev_token": "<落雪开发者 API 密钥>",
+    "lx_client_id": "<可选：OAuth 应用 ID>",
+    "lx_client_secret": "<可选：OAuth 应用密钥>",
+    "lx_redirect_uri": "urn:ietf:wg:oauth:2.0:oob"
+  },
+  "general": {
+    "enable_reply": true,
+    "update_notice": true
+  }
+}

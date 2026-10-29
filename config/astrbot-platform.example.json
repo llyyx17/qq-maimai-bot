@@ -1,0 +1,29 @@
+{
+  "_comment": "AstrBot 的 aiocqhttp 平台示例，对应 data/cmd_config.json 的 platform 段。方向：SnowLuma 作为客户端连到这里的 6199。",
+  "platform": [
+    {
+      "id": "snowluma",
+      "type": "aiocqhttp",
+      "enable": true,
+      "ws_reverse_host": "127.0.0.1",
+      "ws_reverse_port": 6199,
+      "ws_reverse_token": ""
+    }
+  ],
+  "platform_settings": {
+    "enable_id_white_list": true,
+    "id_whitelist": [
+      "snowluma:FriendMessage:1000000001",
+      "snowluma:GroupMessage:123456789",
+      "123456789"
+    ],
+    "segmented_reply": {
+      "_comment": "interval 必须是「最小,最大」两个值；只填一个会导致发送阶段 IndexError，消息全部丢掉",
+      "enable": true,
+      "interval_method": "random",
+      "interval": "1.2, 2.6",
+      "only_llm_result": true
+    },
+    "ignore_bot_self_message": true
+  }
+}
